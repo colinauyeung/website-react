@@ -1,0 +1,33 @@
+[
+    {
+        "title": "CPSC 601: Sustainable Interaction Design",
+        "imgurl": "./assets/project-images/sustainable.png",
+        "imgpos": "30% 70%",
+        "topText": "Let’s Go Out to Eat: Self-Reflections on the Experiences of Co-Dining",
+        "bottomText":"Autobiographical reflections on co-dining as a first exploration for designing technology for co-dining",
+        "links":[{
+            "title":"Term Paper",
+            "link":"https://drive.google.com/file/d/1FpfAbnxThFlDdeohBCHO5kzdaXqWQJUa/view?usp=sharing"
+        }]
+    },
+
+    {
+        "title": "CPSC 601: Wearable Applications",
+        "imgurl": "./assets/project-images/cosplay.jpg",
+        "imgpos": "0% 0%",
+        "topText": "IN//OUT-OF Character: Controlling Dynamic Cosplay Elements with Implicit and Explicit Interaction",
+        "bottomText":"An embedded hardware interface to support both implicit and explict control of reactive cosplay elementsz",
+        "links":[
+            {
+                "title":"Term Paper",
+                "link":"https://drive.google.com/file/d/15Q2ypvzaCebIV3q592YdNx6yxm7A-i4W/view?usp=sharing"
+            },
+            {
+                "title":"Demo Video",
+                "link":"https://youtu.be/rLPgDWHCytA?si=iAFxQgO1_wZRBb3b"
+            }
+        ]
+    }
+
+
+]
