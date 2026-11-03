@@ -45,6 +45,7 @@ function ProjectGroup({Projects, Title}){
                 subheader1={course.subheader1}
                 subheader2={course.subheader2}
                 bottomText={course.bottomText}
+                authors={course.authors}
                 links={course.links}
                 mode={course.mode}
             

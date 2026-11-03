@@ -1,14 +1,32 @@
-import GradCourses from "../data/GradCourses.json"
+
 import ProjectGroup from '../components/ProjectGroup.jsx'
 
 import PageCore from '../components/PageCore.jsx'
-import NavItem from "../components/NavItem.jsx"
-import NavBox from "../components/NavBox.jsx"
 
-let contents = <ProjectGroup 
-      Projects={GradCourses}
-      Title={"Grad Courses"}
-    />
+import GradCourses from "../data/GradCourses.json"
+import UnderGrad from "../data/UnderGrad.json"
+import PoliSci from "../data/PoliSci.json"
+
+
+let contents = <>
+    <ProjectGroup 
+        Projects={GradCourses}
+        Title={"Grad Courses"}
+        />
+
+    <ProjectGroup 
+        Projects={UnderGrad}
+        Title={"Undergrad Courses"}
+        />
+
+    <ProjectGroup 
+        Projects={PoliSci}
+        Title={"Political Science"}
+        />
+
+
+</>
+
 
 function Projects(){
     return(

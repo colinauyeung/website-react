@@ -1,11 +1,3 @@
-
-
-
-
-import GradCourses from "./data/GradCourses.json"
-import ProjectGroup from './components/ProjectGroup.jsx'
-
-import PageCore from './components/PageCore.jsx'
 import Home from "./pages/index.jsx";
 import Research from "./pages/research.jsx";
 import Projects from "./pages/projects.jsx";
@@ -15,6 +7,7 @@ import {
     BrowserRouter as Router,
     Routes,
     Route,
+    StaticRouter
 } from "react-router-dom";
 
 
@@ -24,10 +17,10 @@ function App() {
   return (
       <Router>
             <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route path="/research" element={<Research />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/personal" element={<Personal />} />
+                <Route exact path="/website-react/" element={<Home />} />
+                <Route path="/website-react/research" element={<Research />} />
+                <Route path="/website-react/projects" element={<Projects />} />
+                <Route path="/website-react/personal" element={<Personal />} />
             </Routes>
         </Router>
   )

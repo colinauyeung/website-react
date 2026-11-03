@@ -44,10 +44,14 @@ function TitleBlock({title}){
     if(title==null){
         return <></>
     }
+    let size = "text-xl"
+    if(title.length > 35){
+        size = "text-base"
+    }
     return(
         <div className='bg-mbrown-500 min-h-40 flex items-center py-5 px-0 mx-0 mb-3'>
             <div className='h-20 min-w-20 float-left my-0 mx-10 bg-mwhite-500'></div>
-            <div className='text-mwhite-500 font-medium text-xl'>
+            <div className={`text-mwhite-500 font-medium ${size}`}>
                 {title}
             </div>
         </div>
@@ -171,6 +175,8 @@ function ProjectBlock({title, imagesrc, imagepos, topText,
     subheader1, subheader2, bottomText, authors, links, mode
 }){
 
+    let ml = "ml-5"
+
 
     let titleblock = <></>
     if(mode != "headless"){
@@ -180,6 +186,10 @@ function ProjectBlock({title, imagesrc, imagepos, topText,
     let imagebloc = <></>
     if(mode != "noimage"){
         imagebloc = <ImageBlock src={imagesrc} objectPosition={imagepos} mode={mode}/>
+        
+    }
+    else{
+        ml = "ml-0"
     }
 
     if(mode == "onlyheader"){
@@ -191,10 +201,12 @@ function ProjectBlock({title, imagesrc, imagepos, topText,
         )
     }
 
+
+
     return(
        <div className='font-fira block px-5 mb-20 md:flex'>
         {imagebloc}
-        <div className='mt-5 md:mt-0 md:ml-5 w-full'>
+        <div className={`mt-5 md:mt-0 md:${ml} w-full`}>
             {titleblock}
             <TopText text={topText} />
             <SubHeader1 text={subheader1}/>

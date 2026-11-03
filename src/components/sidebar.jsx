@@ -25,16 +25,16 @@ function SideBar(){
     </>
 
     let menubox = <>
-        <Link to="/">
+        <Link to="/website-react/">
             <NavItem title={"home"}/>
         </Link>
-        <Link to="/research">
+        <Link to="/website-react/research">
             <NavItem title={"research"}/>
         </Link>
-        <Link to="/projects">
+        <Link to="/website-react/projects">
             <NavItem title={"projects"}/>
         </Link>
-        <Link to="/personal">
+        <Link to="/website-react/personal">
             <NavItem title={"personal"}/>
         </Link>
     
