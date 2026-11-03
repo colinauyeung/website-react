@@ -1,5 +1,5 @@
-import sustainable from "./assets/project-images/sustainable.png"
-import styles from "./ProjectBlock.module.css"
+
+// import styles from "./ProjectBlock.module.css"
 
 
 function LinksBlock({links}){
@@ -29,7 +29,7 @@ function LinksBlock({links}){
     })
 
     return(
-        <div className={styles.bottomText}>
+        <div className='font-normal text-base/[120%]'>
             {res}
         </div>
 
@@ -45,9 +45,9 @@ function TitleBlock({title}){
         return <></>
     }
     return(
-        <div className={styles.titleBlock}>
-            <div className={styles.titleDecor}></div>
-            <div className={styles.titleText}>
+        <div className='bg-mbrown-500 min-h-40 flex items-center py-5 px-0 mx-0 mb-3'>
+            <div className='h-20 min-w-20 float-left my-0 mx-10 bg-mwhite-500'></div>
+            <div className='text-mwhite-500 font-medium text-xl'>
                 {title}
             </div>
         </div>
@@ -60,7 +60,7 @@ function TopText({text}){
     }
     
     return(
-        <div className={styles.topText}>
+        <div className='font-bold text-lg/[120%]'>
             {text}
         </div>
     )
@@ -71,18 +71,37 @@ function BottomText({text}){
         return <></>
     }
     return(
-        <div className={styles.bottomText}>
+        <div className='font-normal text-base/[120%]'>
             {text}
         </div>
     )
 }
 
-function ImageBlock({src, objectPosition}){
+function ImageBlock({src, objectPosition, mode}){
     if(objectPosition == null){
         objectPosition = "0% 0%"
     }
+    if(mode == "headless"){
+        return(
+            <div className="relative w-full md:w-1/4 md:shrink-0">
+                <img 
+                    className='block h-180 md:max-h-none w-full md:h-full object-cover md:absolute' 
+                    src={src} 
+                    style={{objectPosition: objectPosition}} 
+                />
+            </div>
+
+        )
+    }
     return(
-        <img className={styles.mainImage} src={src} style={{objectPosition: objectPosition}} />
+        <div className="relative w-full md:w-1/3 md:shrink-0">
+            <img 
+                className='block h-180 md:max-h-none w-full md:h-full object-cover md:absolute' 
+                src={src} 
+                style={{objectPosition: objectPosition}} 
+            />
+        </div>
+
     )
 }
 
@@ -91,7 +110,7 @@ function SubHeader1({text}){
         return <></>
     }
     return(
-        <div className={styles.bottomText}>
+        <div className='font-normal text-base/[120%]'>
             {text}
         </div>
     )
@@ -102,7 +121,7 @@ function SubHeader2({text}){
         return <></>
     }
     return(
-        <div className={styles.bottomText}>
+        <div className='font-normal text-base/[120%]'>
             <i>{text}</i>
         </div>
     )
@@ -140,7 +159,7 @@ function AuthorBlock({authors}){
     })
 
     return(
-        <div className={styles.bottomText}>
+        <div className='font-normal text-base/[120%]'>
             {res}
         </div>
     )
@@ -149,18 +168,38 @@ function AuthorBlock({authors}){
 
 
 function ProjectBlock({title, imagesrc, imagepos, topText, 
-    subheader1, subheader2, bottomText, authors, links
+    subheader1, subheader2, bottomText, authors, links, mode
 }){
 
+
+    let titleblock = <></>
+    if(mode != "headless"){
+        titleblock = <TitleBlock title={title}/>
+    }
+
+    let imagebloc = <></>
+    if(mode != "noimage"){
+        imagebloc = <ImageBlock src={imagesrc} objectPosition={imagepos} mode={mode}/>
+    }
+
+    if(mode == "onlyheader"){
+        return(
+            <div className='font-fira block px-5 mb-5'>
+                <TitleBlock title={title}/>
+            </div>
+            
+        )
+    }
+
     return(
-       <div className={styles.projectBlock}>
-        <ImageBlock src={imagesrc} objectPosition={imagepos} />
-        <div className={styles.textBlock}>
-            <TitleBlock title={title}/>
+       <div className='font-fira block px-5 mb-20 md:flex'>
+        {imagebloc}
+        <div className='mt-5 md:mt-0 md:ml-5 w-full'>
+            {titleblock}
             <TopText text={topText} />
             <SubHeader1 text={subheader1}/>
             <SubHeader2 text={subheader2}/>
-            <div className={styles.lineBreak}></div>
+            <div className='h-10'></div>
             <BottomText text={bottomText}/>
             <AuthorBlock authors={authors}/>
             <LinksBlock links={links}/>
