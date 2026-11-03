@@ -175,8 +175,7 @@ function ProjectBlock({title, imagesrc, imagepos, topText,
     subheader1, subheader2, bottomText, authors, links, mode
 }){
 
-    let ml = "ml-5"
-
+    let blockclass = "mt-5 md:mt-0 md:ml-5 w-full"
 
     let titleblock = <></>
     if(mode != "headless"){
@@ -189,7 +188,7 @@ function ProjectBlock({title, imagesrc, imagepos, topText,
         
     }
     else{
-        ml = "ml-0"
+        blockclass = "mt-5 md:mt-0 md:ml-0 w-full"
     }
 
     if(mode == "onlyheader"){
@@ -202,11 +201,13 @@ function ProjectBlock({title, imagesrc, imagepos, topText,
     }
 
 
+    
+
 
     return(
        <div className='font-fira block px-5 mb-20 md:flex'>
         {imagebloc}
-        <div className={`mt-5 md:mt-0 md:${ml} w-full`}>
+        <div className={blockclass}>
             {titleblock}
             <TopText text={topText} />
             <SubHeader1 text={subheader1}/>
