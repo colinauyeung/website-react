@@ -12,6 +12,7 @@
   --color-mbrown-500: #4F4D41;
   --color-outline: #C7C1A1;
   --color-lightbrown: #6E6B5C;
+  --color-darkbrown: #131109;
 
   --inset-shadow-header: inset 0px 0px 0px 3px #C7C1A1;
 
@@ -19,6 +20,13 @@
 }
 
 body{
-  background: #C7C1A1;  
+
+  @media (max-width: 796px) {
+    background: #EAE4C2; 
+  }
+  @media (min-width: 797px) {
+    background: #C7C1A1;  
+  }
+
 
 }
