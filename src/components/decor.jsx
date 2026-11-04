@@ -9,4 +9,34 @@ function Header({title}){
     )
 }
 
-export {Header};
+function TitleBlock({title}){
+    if(title==null){
+        return <></>
+    }
+    let size = "text-xl"
+    // if(title.length > 35){
+    //     size = "text-base"
+    // }
+    return(
+        <div className='font-fira bg-mbrown-500 min-h-40 flex items-center py-5 px-0 mx-5 mb-3'>
+            <div className='h-20 min-w-20 float-left my-0 mx-10 bg-mwhite-500'></div>
+            <div className={`text-mwhite-500 font-medium ${size}`}>
+                {title}
+            </div>
+        </div>
+    )
+}
+
+function Paragraph({Text}){
+
+    return(
+        <div className="py-0 px-5 mb-10 text-mbrown-500 font-fragment font-normal text-[16px]/[18px]">
+            {Text}
+        </div>
+
+
+    )
+
+}
+
+export {Header, TitleBlock, Paragraph};

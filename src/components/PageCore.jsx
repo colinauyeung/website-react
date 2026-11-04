@@ -71,7 +71,7 @@ function PageCore({Contents, Title}){
     return(
         <div
             id="layout"
-            className="md:flex w-screen md:items-start md:justify-center pr-5 md:pr-0"
+            className="md:flex md:w-screen md:items-start md:justify-center pr-5 md:pr-0"
         >
 
             <SideBar Pages={Links.Pages} Links={Links.Links}/>

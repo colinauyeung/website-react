@@ -35,6 +35,7 @@ function ProjectGroup({Projects, Title}){
     let res = Projects.map((course) =>{
         // console.log(course)
         const imgUrl = new URL(`../assets/project-images/${course.imgurl}`, import.meta.url).href
+        console.log(`../assets/project-images/${course.imgurl}`,)
 
         return(
             <ProjectBlock 
@@ -45,6 +46,7 @@ function ProjectGroup({Projects, Title}){
                 subheader1={course.subheader1}
                 subheader2={course.subheader2}
                 bottomText={course.bottomText}
+                subBottom={course.subBottom}
                 authors={course.authors}
                 links={course.links}
                 mode={course.mode}

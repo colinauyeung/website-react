@@ -172,18 +172,18 @@ function AuthorBlock({authors}){
 
 
 function ProjectBlock({title, imagesrc, imagepos, topText, 
-    subheader1, subheader2, bottomText, authors, links, mode
+    subheader1, subheader2, bottomText, subBottom, authors, links, mode
 }){
 
     let blockclass = "mt-5 md:mt-0 md:ml-5 w-full"
 
     let titleblock = <></>
-    if(mode != "headless"){
+    if(mode != "headless" & mode !="onlytext"){
         titleblock = <TitleBlock title={title}/>
     }
 
     let imagebloc = <></>
-    if(mode != "noimage"){
+    if(mode != "noimage" & mode !="onlytext"){
         imagebloc = <ImageBlock src={imagesrc} objectPosition={imagepos} mode={mode}/>
         
     }
@@ -214,6 +214,7 @@ function ProjectBlock({title, imagesrc, imagepos, topText,
             <SubHeader2 text={subheader2}/>
             <div className='h-10'></div>
             <BottomText text={bottomText}/>
+            <SubHeader2 text={subBottom}/>
             <AuthorBlock authors={authors}/>
             <LinksBlock links={links}/>
         </div>
